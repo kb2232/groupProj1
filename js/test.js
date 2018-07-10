@@ -77,8 +77,8 @@ $(document).ready(() => {
 	var edamam = {
 		proxyURL: 'https://shielded-hamlet-43668.herokuapp.com/',
 		URL: 'https://api.edamam.com/search?q=',
-		app_id: id[2],
-		app_key: KEY[2],
+		app_id: id[0],
+		app_key: KEY[0],
 		buildQueryURLSearch: function(keyword) {
 			var queryURL =
 				this.proxyURL + this.URL + keyword + '&app_id=' + this.app_id + '&app_key=' + this.app_key + '&';
