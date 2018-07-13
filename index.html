@@ -1,126 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <!-- Link Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <!-- Link JQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- EDAMAM API -->
-  <script src="https://developer.edamam.com/attribution/badge.js"></script>
-  <!-- javascript file -->
-  <!-- <link rel='stylesheet' href='./assets/css/style.css' type='text/css'> -->
-  <script type='text/javascript' src='js/test.js'> </script>
+    <!-- Link Bootstrap -->
 
-  <style>
-    body {
-      padding: 20px 20px 100px 20px;
-    }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Link JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    button {
-      width: 100%;
-    }
-  </style>
+    <!-- EDAMAM API -->
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
+    <!-- Link CSS, Javascript -->
+    
+    <link rel='stylesheet' href='./assets/css/style.css' type='text/css'>
+    <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
+    <script defer src="assets/js/pageAction.js"></script>
+    <script defer src="assets/js/edamam.js"></script>
+    <script defer src="assets/js/giphy.js"></script>
+    <script type='text/javascript' src='assets/js/script.js'> </script>
+    <script type='text/javascript' src='assets/js/bugFix.js'> </script>
+
+    <!-- Animation -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- Google Maps API call -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcOgHEqu_cMFWOiYiOHjE3fR7flQniwdQ" async
+        defer></script>
+
+    <!-- Fonts for Modals -->
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Pacifico" rel="stylesheet">
 
 </head>
 
 <body>
-  <div class="container">
-    <div class="row" id="Page1">
-      <!-- the id=page1 is used to navigate through pages: show and hide -->
-      <div class="col-md-6">
-        <!-- modal that triggers  search modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".search-modal">Yes! I do!</button>
-      </div>
-      <div class="col-md-6">
-        <!-- Button triggers random food modal -->
-        <button type="button" class="btn btn-success first_Dislike" id="firstImg" data-toggle="modal" data-target="#exampleModal">
-          No, Help me find what I want
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/images/festisite_google.png" width="80" height="0" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active NAV" id="homeTab">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-home">Home</i>
+                    </a>
+                </li>
+                <li class="nav-item NAV" id="favTab">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-star"></i>
+                        Favorites
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="g-home" id="ghome">
+        <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+            <video autoplay muted loop id="myVideo">
+                <source src="assets/images/background_video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <img src="assets/images/festisite_google.png" class="img-fluid" />
+        <form id="search-area" name="google" action="#" method="POST" class="form">
+            <br>
+            <input type="search" class="search" id="searchItem" for="fooglesearch" placeholder="Search Your Food: Chicken, Burger, Sushi, Ramen, etc... ">
+            <br>
+            <button type="submit" class="btn btn-primary bttn run-search" name="submit" data-toggle="modal" data-target=".search-modal"
+                value="Foogle Search">Foogle Search</button>
+            <button type="submit" class="btn btn-primary bttn run-random" name="lucky" data-toggle="modal" data-target=".rand-modal"
+                value="Give me Suggestion">Give me Suggestion</button>
+        </form>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+
+
+    <!-- This LENGTHY modal is for the error message...so annoying -->
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary clk" data-toggle="modal" data-target="#myModal" style="display: none;">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
             <div class="modal-content">
-              <!-- modal header -->
-              <div class="modal-header d-flex justify-content-center">
-                <h5 class="font-italic" id="exampleModalLabel">"Like" the images to save your choices</h5>
-                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button> -->
-              </div>
-              <!-- modal body -->
-              <div class="modal-body Page1">
-                <div class="container">
-                  <div class="row">
-                    <!-- this is where i append image -->
-                    <div class="col-md-12 modalImg d-flex justify-content-center">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-4 col-sm-4">
-                      <button type="button" class="btn btn-primary" id="like">Like</button>
-                    </div>
-                    <div class="col-4 col-sm-4">
-                      <button type="button" class="btn btn-success first_Dislike" id="dislike">Dislike</button>
-                    </div>
-                    <div class="col-4 col-sm-4">
-                      <a href="#" onclick="return show('Page2','Page1');">
-                        <button type="button" class="close btn btn-warning" data-dismiss="modal" aria-label="Close">Show-results
-                        </button>
-                      </a>
-                    </div>
-                  </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h5 class="text-white">You favorite page is currently empty</h5>
                 </div>
-              </div>
-              <!-- modal footer -->
-              <div class="modal-footer imgName d-flex justify-content-center">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
             </div>
-          </div>
         </div>
-
-      </div>
     </div>
-    <!-- end dating modal -->
+     <!-- end of LENGTHY modal  -->
 
-    <!-- this is the page we are going to append liked images -->
-    <div class="row">
-      <div class="col-md-12">
-        <div id="Page2" style="display:none">
-          <a href="#" onclick="return show('Page1','Page2');">
-            <button class="btn btn-warning">Yellow-Page</button>
-          </a>
-          <hr>
-          <div class="addImage">
-          </div>
+    <!-- RANDOM MODAL: this is duplicate of search modal -->
+    <div class="modal fade rand-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rand-modal-content">
+                <div class="rand-item row">
+                    <img class="col-12 rand-item-img" />
+                    <h3 class="col-12 rand-item-name"></h3>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Calories : </h5>
+                    <i class="label rand-item-caloriesLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Proteins : </h5>
+                    <i class="label rand-item-proteinsLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Carbs : </h5>
+                    <i class="label rand-item-carbsLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Fats : </h5>
+                    <i class="label rand-item-fatsLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Cholesterol : </h5>
+                    <i class="label rand-item-choleLabel col-8">  </i>
+                </div>
+                <button type="button" class="btn btn-light close-modal" data-dismiss="modal"> 
+                    <i class="fas fa-angle-down"></i> 
+                </button>
+                <button type="submit" class="btn btn-default run-random dislike" id="rand-dislike">
+                    <i class="far fa-thumbs-down"></i>
+                </button>
+                <button type="submit" class="btn btn-default like" id="rand-like">
+                    <i class="far fa-thumbs-up"></i>
+                </button>
+                <br>
+                <br>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+
+    <!-- SEARCH MODAL -->
+    <div class="modal fade search-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content search-modal-content">
+                <div class="search-item row">
+                    <img class="col-12 searched-item-img" />
+                    <h3 class="col-12 searched-item-name"></h3>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Calories : </h5>
+                    <i class="label searched-item-caloriesLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Proteins : </h5>
+                    <i class="label searched-item-proteinsLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Carbs : </h5>
+                    <i class="label searched-item-carbsLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Fats : </h5>
+                    <i class="label searched-item-fatsLabel col-8">  </i>
+                </div>
+                <div class="row">
+                    <h5 class="col-4 nutrition"> Cholesterol : </h5>
+                    <i class="label searched-item-choleLabel col-8">  </i>
+                </div>
+                <button type="button" class="btn btn-light close-modal" data-dismiss="modal"> 
+                    <i class="fas fa-angle-down"></i> 
+                </button>
+                <button type="submit" class="btn btn-default run-search" id="dislike">
+                    <i class="far fa-thumbs-down"></i>
+                </button>
+                <!-- <button type="submit" class="btn btn-default run-search" id="like"><i class="far fa-thumbs-up"></i></button> -->
+                <button type="submit" class="btn btn-default like" id="like">
+                    <i class="far fa-thumbs-up"></i>
+                </button>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- model for restaurant information -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content detailed-modal-content">
+                <div class="modal-header item-name">
+                    <h4 id="recipe-name"></h4>
+                </div>
+                <div class="modal-body row">
+                    <!-- <div class='container item-info col'>
+                            <img class="item-img"/>
+                        </div> -->
+                    <div class='container restaurant-info col'>
+                        <!-- <img class='result-item-pic' src='./assets/images/placeholder3.jpg'> -->
+                        <img class='item-img' src='#' />
+                        <div class="recipe-calories"></div>
+                        <div class="recipe-labels"></div>
+                        <a href="#" class='yelp-link' target="_blank">
+                            <h4 id="res-info"></h4>
+                        </a>
+                        <h6 class="res-category"></h6>
+                        <!-- <h6 class='rating'> Yelp Rating : <span id="stars"></span> </h6> -->
+                        <i class="fas fa-phone">
+                            <span class="phone"></span>
+                        </i>
+                        <div class="address"></div>
+                        <!-- <h6 class='food-price'></h6>  -->
+                        <!-- <h6 class='distance'> 0.6 mi </h6> -->
+                        <img class='delivery' src='./assets/images/delivery.png'>
+                        <img class='takeout' src='./assets/images/takeout.png'>
+                        <!-- <a href="#" class='reviews'> 3 Reviews </a> -->
+                        <i class="fa fa-map-marker">
+                            <span class='distance'> </span>
+                        </i>
+                        <!-- <a href="#" class='yelp-link' target="_blank"> More Details </a> -->
+                    </div>
+                    <div class="container restaurant-location col">
+                        <div id='map'></div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-light close-detailed-modal" data-dismiss="modal">
+                    <i class="fas fa-angle-down"></i> 
+                </button>
+                <button type="button submit" class="btn btn-info save-to-favs" id="save-btn">
+                    <i class="fa fa-star"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT PAGE -->
+    <div class="result card " id="resultPage" name="resultPage">
+        <div class="card-body searched-result-page">
+            <div class="result-item-area row card-body">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+            <div class="container">
+                <div class="footer-social-list row">
+                    <div class="col-6">
+                        <p>© Copyright Foogle 2018. </p>
+                    </div>
+                    <div class="col-6 ft-icon">
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-facebook-square"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        function show(shown, hidden) {
+            document.getElementById(shown).style.display = 'block';
+            document.getElementById(hidden).style.display = 'none';
+            return false;
+        }
+        document.querySelector('#myVideo').playbackRate = 0.5;
+    </script>
+
+
+
 </body>
-<script>
-  function show(shown, hidden) {
-    document.getElementById(shown).style.display = 'block';
-    document.getElementById(hidden).style.display = 'none';
-    return false;
-  }
-</script>
 
 </html>
